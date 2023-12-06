@@ -1,0 +1,315 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1A2A33;
+}
+
+#deMessage{
+  text-align: center;
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.875px;
+  border-radius: 5px;
+background:  #1F3641;
+box-shadow: 0px -4px 0px 0px #10212A inset;
+}
+
+#toppart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+#toppart div {
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  width: 100px;
+}
+#Restart{
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 40px;
+  border-radius: 15px;
+  background: #A8BFC9;
+  box-shadow: 0px -4px 0px 0px #6B8997 inset;
+
+}
+
+.container {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#icon-x,
+#icon-o {
+  position: absolute;  /* Use position: absolute to position the icons */
+  z-index: 1;          /* Set a higher z-index for the icons */
+}
+
+.col-xs-4 {
+  position: relative;  /* Use position: relative for the cells */
+  z-index: 0;          /* Set a lower z-index for the cells */
+  margin: 5px;
+  text-align: center;
+  font-size: 100px;
+  cursor: pointer;
+  width: 140px;
+  height: 140px;
+  border-radius: 15px;
+  background: #1F3641;
+  box-shadow: 0px -8px 0px 0px #10212A inset;
+}
+
+
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoreboard div {
+    width: 120px;
+    height: 72px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+    color:  #1A2A33;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing:1px;
+
+}
+
+#playerScore{
+background:  #31C3BD;
+}
+#tiesScore{
+  background:  #A8BFC9;
+}
+#cpuScore{
+  border-radius: 15px;
+  background:  #F2B137;
+}
+
+
+/* Add the following styles to cover the game board with messages */
+#computerMessage button,
+#winMessage button,
+#confirmbutton button,
+#tieMessage button {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+#computerMessage,
+#winMessage,
+#popupMessage,
+#tieMessage
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  width: 280px;
+  height: 140px;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: #1F3641;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+#computerMessage .buttons,
+#winMessage .buttons,
+#confirmbutton .buttons,
+#tieMessage .buttons{
+  display: flex;
+  gap: 20px
+}
+
+#quitWin,
+#quitComputer,
+#nextRoundButton,
+#nextRoundComputer,
+#nextRoundTie,
+#quitTie{
+  width: 76px;
+  height: 52px;
+  color: #1A2A33;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  text-transform: uppercase;
+
+}
+
+#quitWin,
+#quitComputer,
+#quitTie{
+  background: #a8bfc9;
+  box-shadow: 0px -8px 0px 0px #6b8997 inset;
+
+}
+
+#nextRoundButton,
+#nextRoundComputer,
+#confirmRestart,
+#nextRoundTie{
+  width: 146px;
+  height: 52px;
+  background: #f2b137;
+  box-shadow: 0px -8px 0px 0px #cc8b13 inset;
+}
+
+
+#cancel{
+  width: 146px;
+  height: 52px;
+  background: #a8bfc9;
+  box-shadow: 0px -8px 0px 0px #6b8997 inset;
+
+}
+
+
+#computerMessage p:first-child , 
+#popupMessage, 
+#tieMessage{
+  color: #a8bfc9;
+}
+
+#computerMessage{
+  color: #f2b137;
+  text-transform: uppercase;
+}
+
+#winMessage p:first-child {
+  color: #31C3BD;
+}
+
+#winMessage {
+  color: #31C3BD;
+  text-transform: uppercase;
+}
+
+/* Media query for phones */
+@media only screen and (max-width: 600px) {
+  #toppart {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #toppart div {
+    width: auto;
+  }
+
+  #Restart {
+    width: 40px;
+    height: 30px;
+  }
+
+  .col-xs-4 {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .scoreboard div {
+    width: 60px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  #computerMessage,
+  #winMessage,
+  #popupMessage,
+  #tieMessage {
+    width: 90%;
+    height: 30%;
+  }
+
+  #confirmbutton button {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  #computerMessage p:first-child,
+  #popupMessage,
+  #tieMessage {
+    font-size: 12px;
+  }
+}
+
+/* Media query for tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  #toppart {
+    gap: 30px;
+  }
+
+  #Restart {
+    width: 60px;
+    height: 40px;
+  }
+
+  .col-xs-4 {
+    width: 100px;
+    height: 100px;
+    font-size: 36px;
+  }
+
+  .scoreboard div {
+    width: 100px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  #computerMessage,
+  #winMessage,
+  #popupMessage,
+  #tieMessage {
+    width: 70%;
+  }
+
+  #confirmbutton button {
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  #computerMessage p:first-child,
+  #popupMessage,
+  #tieMessage {
+    font-size: 16px;
+  }
+}
