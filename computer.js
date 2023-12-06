@@ -129,7 +129,7 @@ function setMsg(msg) {
     elem.appendChild(userIconSVG);
   }
   // Append the message text
-  elem.innerHTML += msg.replace("O TURN", "").replace("X TURN", "TURN");
+  // elem.innerHTML += msg.replace("O TURN", "").replace("X TURN", "TURN");
 }
 
 
@@ -200,7 +200,7 @@ function updateMove() {
     $("#computerMessage").hide();
     $("#winMessage").hide();
   } else {
-    $("#message").text(myMove ? setMsg("O TURN") : setMsg(" X "+"TURN"));
+    $("#message").text(myMove ? setMsg("X TURN") : setMsg("O TURN"));
   }
 
   if (winner == 1 || winner == 0 || winner == -1) {
