@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Italianno&family=Outfit:wght@300;700&display=swap');
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -114,7 +117,6 @@ body {
   }
   
   
-  /* Add the following styles to cover the game board with messages */
   #player1Message button,
   #player2Message button,
   #confirmbutton button,
@@ -254,8 +256,39 @@ body {
   /* Add additional styles specific to mobile phones */
 }
 
-/* Media query for tablets */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+/* Media query for mobile phones with width between 360px and 930px */
+@media only screen and (min-width: 360px) and (max-width: 930px) {
+  #toppart {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #toppart div {
+    width: auto;
+  }
+
+  #Restart {
+    width: 40px;
+    height: 30px;
+  }
+
+  .col-xs-4 {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .scoreboard div {
+    width: 80px;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  /* Add additional styles specific to mobile phones */
+}
+
+/* Media query for tablets with width between 768px and 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   #toppart {
     gap: 30px;
   }

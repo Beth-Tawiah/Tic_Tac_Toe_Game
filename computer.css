@@ -1,3 +1,5 @@
+  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Italianno&family=Outfit:wght@300;700&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
@@ -8,16 +10,17 @@ body {
 }
 
 #deMessage{
-  text-align: center;
+  color:  #A8BFC9;
   font-family: Outfit;
-  font-size: 14px;
+  font-size: 199px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 0.875px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   border-radius: 5px;
-background:  #1F3641;
-box-shadow: 0px -4px 0px 0px #10212A inset;
+  background:  #1F3641;
+  box-shadow: 0px -4px 0px 0px #10212A inset;
 }
 
 #toppart {
@@ -26,6 +29,7 @@ box-shadow: 0px -4px 0px 0px #10212A inset;
   align-items: center;
   justify-content: center;
   gap: 60px;
+  
 }
 
 #toppart div {
@@ -33,6 +37,7 @@ box-shadow: 0px -4px 0px 0px #10212A inset;
   margin: 5px;
   text-align: center;
   width: 100px;
+ 
 }
 #Restart{
   justify-content: center;
@@ -222,8 +227,9 @@ background:  #31C3BD;
   text-transform: uppercase;
 }
 
-/* Media query for phones */
-@media only screen and (max-width: 600px) {
+
+/* Media query for phones with width <= 360px and height <= 800px */
+@media only screen and (max-width: 360px) and (max-height: 800px) {
   #toppart {
     flex-direction: column;
     gap: 10px;
@@ -271,45 +277,51 @@ background:  #31C3BD;
   }
 }
 
-/* Media query for tablets */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+/* Media query for tablets with width >= 768px and width <= 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Tablet styles */
   #toppart {
-    gap: 30px;
+    gap: 60px;
+  }
+
+  #toppart div {
+    width: 100px;
   }
 
   #Restart {
-    width: 60px;
+    width: 50px;
     height: 40px;
   }
 
   .col-xs-4 {
-    width: 100px;
-    height: 100px;
-    font-size: 36px;
+    width: 140px;
+    height: 140px;
+    font-size: 100px;
   }
 
   .scoreboard div {
-    width: 100px;
-    height: 60px;
-    font-size: 18px;
+    width: 120px;
+    height: 72px;
+    font-size: 14px;
   }
 
   #computerMessage,
   #winMessage,
   #popupMessage,
   #tieMessage {
-    width: 70%;
+    width: 280px;
+    height: 140px;
   }
 
   #confirmbutton button {
-    width: 120px;
-    height: 50px;
+    width: 146px;
+    height: 52px;
     font-size: 16px;
   }
 
   #computerMessage p:first-child,
   #popupMessage,
   #tieMessage {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

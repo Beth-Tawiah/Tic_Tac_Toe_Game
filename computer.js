@@ -113,24 +113,42 @@ function restartGame() {
 
 }
 
-function setMsg(msg) {
-    var elem = document.getElementById("deMessage");
-    elem.innerText = msg;
-    elem.style.color = "black";
-    $(elem).removeClass("blinking");
+document.addEventListener("DOMContentLoaded", function() {
+  // Your JavaScript code here
+  // For example, the setMsg function and the rest of your code
+  function setMsg(msg) {
+      var elem = document.getElementById("deMessage");
+      elem.innerHTML = ''; // Clear existing content
+      
+      // Create an SVG element based on the message
+      if (msg.includes("O TURN")) {
+          var userIconSVG = document.getElementById("userIconSVG");
+          if (userIconSVG) {
+              elem.innerHTML += userIconSVG.innerHTML;
+          }
+      } else if (msg.includes("X TURN")) {
+          var computerIconSVG = document.getElementById("computerIconSVG");
+          if (computerIconSVG) {
+              elem.innerHTML += computerIconSVG.innerHTML;
+          }
+      }
+
+      // Append the message text
+      elem.innerHTML += msg.replace("O TURN", "").replace("X TURN", "");
   }
+
+  // Example usage
+  var myMove = true; // Replace with your logic to determine the move
+  setMsg(myMove ? "O TURN" : "X TURN");
+});
+
 
   function setAlr(msg) {
     var elem = document.getElementById("deMessage");
     elem.innerText = msg;
     elem.style.color = "blue";
-    $(elem).removeClass("blinking");
   }
-  function blinker() {
-    $('.blinking').fadeOut(500);
-    $('.blinking').fadeIn(500);
-  }
-  setInterval(blinker, 1000);
+
 
   function setWarn(msg) {
     var elem = document.getElementById("deMessage");
@@ -170,24 +188,7 @@ $(document).ready(function() {
   });
   
   
- $("#X").click(function() {
-    
-     player = "X";
-     computer = "O";
-     restartGame();
-     $("h2").html("Playing as X");
-      $('h2').css({'color':'black'}); 
-   });
-  $("#O").click(function() {
-    
-     player = "O";
-     computer="X";
-     restartGame();
-     $("h2").html("Playing as O");
-     $('h2').css({'color':'black'});  
-   });
-  
-  $("#start").click(restartGame);
+
 });
 
 function updateMove() {
@@ -207,7 +208,7 @@ function updateMove() {
     $("#computerMessage").hide();
     $("#winMessage").hide();
   } else {
-    $("#message").text(myMove ? setMsg("O TURN") : setMsg("X TURN"));
+    // $("#message").text(myMove ? setMsg(computerIconSVG+" TURN") : setMsg(userIconSVG+" TURN"));
   }
 
   if (winner == 1 || winner == 0 || winner == -1) {
