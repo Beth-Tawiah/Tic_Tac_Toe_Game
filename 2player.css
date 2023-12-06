@@ -28,14 +28,16 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
+    
   }
   
   #toppart div {
-    padding: 10px;
-    margin: 5px;
+    padding: 5px;
     text-align: center;
     width: 100px;
+  
+   
   }
   #Restart{
     justify-content: center;
@@ -85,24 +87,22 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
   }
   
   .scoreboard div {
-      width: 120px;
-      height: 72px;
-      padding: 10px;
-      margin: 5px;
-      text-align: center;
-      border-radius: 15px;
-      color:  #1A2A33;
-      text-align: center;
-      font-family: Outfit;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing:1px;
-  
+    width: 120px;
+    height: 72px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    color:  #1A2A33;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal; 
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing:1px;
   }
   
   #player2Score{

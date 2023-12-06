@@ -57,17 +57,15 @@ $("#nextRoundTie").click(function () {
   $("#tieMessage").hide(); 
  
   restartGame();
-  // Continue with the game logic for the next round
-  // You may want to reset the game state or perform other actions
+  
 });
 var player="X";
 var computer="O";
-// ... (Your existing code)
 
 var playerScore = 0;
 var cpuScore = 0;
 var tiesScore = 0;
-
+var scoresUpdated = false; 
 
 // ... (Your existing code)
 
@@ -210,24 +208,29 @@ function updateMove() {
 
   if (winner == 1 || winner == 0 || winner == -1) {
     // Increment scores based on the outcome
+    if (!scoresUpdated) {
     if (winner == 1) {
       // Computer wins
-      cpuScore += 1;
+      cpuScore ++;
     } else if (winner == 0) {
       // Player wins
-      playerScore += 1;
+      playerScore ++;
     } else if (winner == -1) {
       // It's a draw
-      tiesScore += 1;
+      tiesScore ++;
     }
 
     // Update the scoreboard
     $("#playerScore .score").text(playerScore);
     $("#tiesScore .score").text(tiesScore);
     $("#cpuScore .score").text(cpuScore);
-  }
-}
 
+    scoresUpdated = true;
+  }
+} else {
+  scoresUpdated = false;
+}
+}
 
 
 function getWinner(board) {
@@ -293,7 +296,6 @@ function makeMove() {
       // Use minimax algorithm
       board = minimaxMove(board);
     }
-
     myMove = false;
     updateMove();
   }, 1000); // Adjust the delay time (in milliseconds) as needed
