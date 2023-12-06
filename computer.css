@@ -7,10 +7,14 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #1A2A33;
+  text-transform: uppercase;
+  font-family: Outfit;
+
+
 }
 
-#deMessage{
-  color:  #A8BFC9;
+#deMessage {
+  color: #A8BFC9;
   font-family: Outfit;
   font-size: 19px;
   font-style: normal;
@@ -19,28 +23,27 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 5px;
-  background:  #1F3641;
+  background: #1F3641;
   box-shadow: 0px -4px 0px 0px #10212A inset;
-  width: 20px;
-  height: 50px;
+  height: 90px;
   position: relative;
- 
 }
+
 
 #toppart {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   
 }
 
 #toppart div {
-  padding: 10px;
-  margin: 5px;
+  padding: 5px;
   text-align: center;
   width: 100px;
+
  
 }
 #Restart{
@@ -91,27 +94,40 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  
 }
 
 .scoreboard div {
-    width: 120px;
-    height: 72px;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    border-radius: 15px;
-    color:  #1A2A33;
-    text-align: center;
-    font-family: Outfit;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing:1px;
-
+  width: 120px;
+  height: 72px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  color:  #1A2A33;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal; 
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing:1px;
+}
+#playerScore,
+#tiesScore,
+#cpuScore {
+  font-size: 14px;
+  font-weight: 500;
 }
 
-#playerScore{
+#playerScore .score,
+#tiesScore .score,
+#cpuScore .score {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+
+#playerScore {
 background:  #31C3BD;
 }
 #tiesScore{
@@ -131,6 +147,8 @@ background:  #31C3BD;
   margin-top: 10px;
   display: inline-block;
 }
+
+
 
 #computerMessage,
 #winMessage,
