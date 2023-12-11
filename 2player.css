@@ -10,7 +10,7 @@ body {
   background-color: #1A2A33;
   text-transform: uppercase;
   font-family: Outfit;
-padding: 100px 160px 150px 150px;
+  padding: 100px 160px 150px 150px;
 }
  
 
@@ -80,15 +80,10 @@ padding: 100px 160px 150px 150px;
     justify-content: center;
     align-items: center;
   }
-  
-  /* #icon-x,
-  #icon-o {
-    position: absolute;  
-    z-index: 1;          
-  } */
+
   
   .col-xs-4 {
-    position: relative; 
+    position: relative;  
     z-index: 0;          
     margin: 5px;
     text-align: center;
@@ -102,12 +97,8 @@ padding: 100px 160px 150px 150px;
   }
   
   
-  
   .scoreboard {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     
   }
   
@@ -116,6 +107,7 @@ padding: 100px 160px 150px 150px;
     height: 72px;
     padding: 10px;
     margin: 5px;
+    margin-top: 50px;
     border-radius: 15px;
     color:  #1A2A33;
     text-align: center;
@@ -123,9 +115,10 @@ padding: 100px 160px 150px 150px;
     font-style: normal; 
     font-weight: 500;
     line-height: normal;
-    letter-spacing:1px;
+    letter-spacing: 1px;
   }
-  #player2Score,
+
+#player2Score,
 #tiesScore,
 #player1Score {
   font-size: 14px;
@@ -150,14 +143,6 @@ padding: 100px 160px 150px 150px;
     background:  #F2B137;
   }
   
-  
-  #player1Message button,
-  #player2Message button,
-  #confirmbutton button,
-  #tieMessage button {
-    display: inline-block;
-  }
-  
   #player1Message,
   #player2Message,
   #popupMessage,
@@ -169,197 +154,186 @@ padding: 100px 160px 150px 150px;
     justify-content: center;
     text-align: center;
     position: fixed;
-    height: 340px;
     top: 20%;
     left: 0;
-    width: 100%;
     background-color: #1F3641;
     z-index: 99;
     overflow-y: auto;
+    width: 100%;
+    height: 266px;
   }
-  
-  #player1Message .buttons,
-  #player2Message .buttons,
-  #confirmbutton .buttons,
-  #tieMessage .buttons{
-    display: flex;
-    gap: 20px
-  }
-  
-  #quitWin,
-  #quitComputer,
-  #nextRoundButton,
-  #nextRoundComputer,
-  #nextRoundTie,
-  #quitTie{
-    width: 76px;
-    height: 52px;
-    color: #1A2A33;
+
+  #popupMessage,
+  #tieMessage{
+    color: #A8BFC9;
     text-align: center;
     font-family: Outfit;
-    font-size: 16px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    letter-spacing: 1px;
-    border-radius: 10px;
-    text-transform: uppercase;
-  
-  }
-  
-  #quitWin,
-  #quitComputer,
-  #quitTie{
-    background: #a8bfc9;
-    box-shadow: 0px -8px 0px 0px #6b8997 inset;
-  
-  }
-  
-  #nextRoundButton,
-  #nextRoundComputer,
-  #confirmRestart,
-  #nextRoundTie{
-    width: 146px;
-    height: 52px;
-    background: #f2b137;
-    box-shadow: 0px -8px 0px 0px #cc8b13 inset;
-  }
-  
-  
-  #cancel{
-    width: 146px;
-    height: 52px;
-    background: #a8bfc9;
-    box-shadow: 0px -8px 0px 0px #6b8997 inset;
-  
-  }
-  
-  
-  #player1Message p:first-child , 
-  #popupMessage, 
-  #tieMessage{
-    color: #a8bfc9;
-    text-align: center;
-    font-family: Outfit;
-    font-size: 40px;
-    font-weight: 700;
-}
-  
-  
-  #player1Message{
-    color: #f2b137;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-  }
-  
-  #player2Message p:first-child {
-    color: #A8BFC9;
-    text-align: center;
-    font-size: 16px;  }
-  
-  #player2Message {
-    color: #31C3BD;
-    font-size: 40px;
-    font-weight: 700;
+    letter-spacing: 2.5px;
   }
 
-  
-  /* Media query for mobile phones */
-  @media only screen and (max-width: 360px) and (max-height: 800px) {
-    #toppart {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    #toppart div {
-      width: auto;
-    }
-  
-    #Restart {
-      width: 40px;
-      height: 30px;
-    }
-  
-    .col-xs-4 {
-      width: 60px;
-      height: 60px;
-      font-size: 18px;
-    }
-  
-    .scoreboard div {
-      width: 60px;
-      height: 40px;
-      font-size: 12px;
-    }
-  
-    #player1Message,
-    #player2Message,
-    #popupMessage,
-    #tieMessage {
-      width: 90%;
-      height: 90%;
-    }
-  
-    #confirmbutton button {
-      width: 80px;
-      height: 30px;
-      font-size: 12px;
-    }
-  
-    #player1Message p:first-child,
-    #popupMessage,
-    #tieMessage {
-      font-size: 12px;
-    }
+#player1Message p:first-child,
+#player2Message p:first-child{
+  margin-top: 1px; 
+  margin-bottom: 1px;
+  color: #a8bfc9;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+#player1Message{
+  color: #f2b137;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  /* margin-top: 2px; */  
+}
+
+#player2Message {
+  color: #31C3BD;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+#cancel{
+  color: #1A2A33;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  width: 146px;
+  height: 52px;
+  background: #a8bfc9;
+  border-radius: 10px;
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
+
+}
+
+#nextRoundTie,
+#nextRoundComputer,
+#nextRoundButton,
+#confirmRestart
+{
+  width: 146px;
+  height: 52px;
+  color: #1A2A33;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #f2b137;
+  border-radius: 10px;
+  box-shadow: 0px -4px 0px 0px #cc8b13 inset;
+}
+
+#quitWin,
+#quitTie,
+#quitComputer{
+  width: 76px;
+  height: 52px;
+  color: #1A2A33;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #a8bfc9;
+  border-radius: 15px;
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
+
+}
+
+
+  /* Media query for phones with width <= 360px and height <= 800px */
+@media only screen and (max-width: 360px) and (max-height: 800px) {
+  body{
+    display: flex;
+    width: 300px;
+    padding: 24px 23px 127px 24px;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Media query for tablets with width >= 768px and width <= 1024px */
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Tablet styles */
-    #toppart {
-      gap: 60px;
-    }
-  
-    #toppart div {
-      width: 100px;
-    }
-  
-    #Restart {
-      width: 50px;
-      height: 40px;
-    }
-  
-    .col-xs-4 {
-      width: 140px;
-      height: 140px;
-      font-size: 100px;
-    }
-  
-    .scoreboard div {
-      width: 120px;
-      height: 72px;
-      font-size: 14px;
-    }
-  
-    #player1Message,
-    #player2Message,
-    #popupMessage,
-    #tieMessage {
-      width: 280px;
-      height: 140px;
-    }
-  
-    #confirmbutton button {
-      width: 146px;
-      height: 52px;
-      font-size: 16px;
-    }
-  
-    #player1Message p:first-child,
-    #popupMessage,
-    #tieMessage {
-      font-size: 14px;
-    }
+
+  #toppart {
+    flex-direction: row;
+    gap: 30px;
+    width: 428px;
+    height: 40px;
   }
+  #toppart div {
+    width: auto;
+  }
+
+  #Restart {
+    width: 40px;
+    height: 40px;
+  }
+
+  .col-xs-4 {
+    width: 96px;
+    height: 96px;
+    font-size: medium;
+  }
+
+  .scoreboard div {
+    width: 70px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  #player1Message,
+  #player2Message,
+  #popupMessage,
+  #tieMessage {
+    width: 100%;
+    height: 40%;
   
+  }
+
+  #player1Message p:first-child,
+#player2Message{
+  margin-bottom: 10px;
+  color: #a8bfc9;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.8px;
+}
+#player1Message{
+  color: #f2b137;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+}
+
+/* Media query for tablets with width >= 768px and width <= 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Tablet styles */
+ 
+  #player1Message,
+  #player2Message,
+  #popupMessage,
+  #tieMessage {
+    width: 100%;
+    height: 30%;
+  
+  }
+}

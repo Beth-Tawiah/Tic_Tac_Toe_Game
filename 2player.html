@@ -42,24 +42,21 @@
 </div>
 </div>
 
-    <!-- <img id="icon-x" src="starter-code/assets/icon-x.svg" width="64" height="64" alt="X Icon">
-    <img id="icon-o" src="starter-code/assets/icon-o.svg" width="66" height="66" alt="O Icon">
-     -->
+<!-- <div id="player-icon"> <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg"><path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" fill="#F2B137"/></svg>
+</div>
+<div id="computer-icon"><svg width="64" height="64" xmlns="http://www.w3.org/2000/svg"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/></svg>
+ </div> -->
 
     <!-- Scoreboard -->
   
     <div class="scoreboard">
-      <div id="player2Score"> PLAYER 2 (You)  <br><span class="score">0</span></div>
+      <div id="player2Score"> X (P2)  <br><span class="score">0</span></div>
       <div id="tiesScore"> Ties <br><span class="score">0</span><!-- Ties score --></div>
-      <div id="player1Score"> PLAYER 1  <br><span class="score">0</span></div
+      <div id="player1Score"> 0 (P1)  <br><span class="score">0</span></div>
     </div>
+    
 
       <!-- Game-related messages -->
-
-
-  
-  
-
     <!-- Quit, Next round, Restart buttons -->
 
     <div id="player1Message" style="display: none;">
@@ -69,8 +66,6 @@
         <button class="quitComputer" id="quitComputer">Quit</button>
         <button class="nextRoundComputer" id="nextRoundComputer">Next Round</button>
       </div>
-      
-
     </div>
  
     <div id="player2Message" style="display: none;">
@@ -89,15 +84,15 @@
         <button class="nextRoundTie" id="nextRoundTie">Next Round</button>
       </div>
         </div>
-<div id="popupMessage" style="display: none;">
+        <div id="popupMessage" style="display: none;">
+          <p>RESTART GAME?</p>
+          <div id="confirmbutton">
+            <button id="cancel">NO, CANCEL</button>
+            <button id="confirmRestart">YES, RESTART</button>
+          </div>
+         
+        </div>
 
-  <p>RESTART GAME?</p>
-  <div id="confirmbutton">
-    <button id="cancel">NO, CANCEL</button>
-    <button id="confirmRestart">YES, RESTART</button>
-  </div>
- 
-</div>
 
 
     <!-- Game board end -->
@@ -110,5 +105,4 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="2player.js"></script>
 </body>
-
 </html>
