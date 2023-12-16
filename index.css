@@ -76,11 +76,18 @@ body {
   box-shadow: 0px -8px 0px 0px #118C87 inset;
 }
 
+#playerGameBtn:hover {
+  background: #65E9E4; 
+  box-shadow: 0px -8px 0px 0px #31C3BD inset; 
+}
 #cpuGameBtn {
   background: #F2B137;
   box-shadow: 0px -8px 0px 0px #CC8B13 inset;
 }
-
+#cpuGameBtn:hover {
+  background: #FFE860; 
+  box-shadow: 0px -8px 0px 0px #CC8B13 inset; 
+}
 @media (max-width: 362px) and (max-height: 800px) {
   body {
     display: flex;

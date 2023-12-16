@@ -67,6 +67,10 @@ body {
   width: 20px;
   height: 20px;
 }
+#Restart:hover {
+  background: #DBE8ED; 
+  box-shadow: 0px -4px 0px 0px #6B8997 inset;
+}
 
   
   .container {
@@ -216,6 +220,11 @@ body {
   box-shadow: 0px -4px 0px 0px #6b8997 inset;
 
 }
+#cancel:hover {
+  background: #DBE8ED; 
+  box-shadow: 0px -4px 0px 0px #6B8997 inset;
+}
+
 
 #nextRoundTie,
 #nextRoundComputer,
@@ -237,6 +246,13 @@ body {
   border-radius: 10px;
   box-shadow: 0px -4px 0px 0px #cc8b13 inset;
 }
+#nextRoundButton:hover,
+#nextRoundComputer:hover,
+#nextRoundTie:hover,
+#confirmRestart:hover {
+  background: #FFE860; 
+  box-shadow: 0px -8px 0px 0px #CC8B13 inset;
+}
 
 #quitWin,
 #quitTie,
@@ -257,12 +273,18 @@ body {
   box-shadow: 0px -4px 0px 0px #6b8997 inset;
 
 }
+#quitComputer:hover,
+#quitWin:hover,
+#quitTie:hover {
+  background: #DBE8ED; 
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
+}
 
 
   /* Media query for phones with width <= 360px and height <= 800px */
 @media only screen and (max-width: 360px) and (max-height: 800px) {
   body{
-    display: flex;
+    display:flex;
     width: 300px;
     padding: 24px 23px 127px 24px;
     flex-direction: column;
@@ -283,7 +305,7 @@ body {
     width: 40px;
     height: 40px;
   }
-
+  
   .col-xs-4 {
     width: 96px;
     height: 96px;

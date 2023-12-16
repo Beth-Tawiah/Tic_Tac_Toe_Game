@@ -60,11 +60,15 @@ body {
   box-shadow: 0px -4px 0px 0px #6B8997 inset;
 }
 
+
 #Restart svg {
   width: 20px;
   height: 20px;
 }
-
+#Restart:hover {
+  background: #DBE8ED; 
+  box-shadow: 0px -4px 0px 0px #6B8997 inset;
+}
 
 
 .container {
@@ -232,6 +236,13 @@ background:  #31C3BD;
   border-radius: 10px;
   box-shadow: 0px -4px 0px 0px #cc8b13 inset;
 }
+#nextRoundButton:hover,
+#nextRoundComputer:hover,
+#nextRoundTie:hover,
+#confirmRestart:hover {
+  background: #FFE860; 
+  box-shadow: 0px -8px 0px 0px #CC8B13 inset;
+}
 #quitWin,
 #quitComputer,
 #quitTie{
@@ -251,6 +262,12 @@ background:  #31C3BD;
   box-shadow: 0px -4px 0px 0px #6b8997 inset;
 
 }
+#quitComputer:hover,
+#quitWin:hover,
+#quitTie:hover {
+  background: #DBE8ED; 
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
+}
 
 #cancel{
   color: #1A2A33;
@@ -266,7 +283,18 @@ background:  #31C3BD;
   box-shadow: 0px -4px 0px 0px #6b8997 inset;
 
 }
+#cancel:hover {
+  background: #DBE8ED; 
+  box-shadow: 0px -4px 0px 0px #6B8997 inset;
+}
 
+.winning-cell-o {
+  background-color: #f2b137;
+}
+
+.winning-cell-x {
+  background-color: #31C3BD;
+}
 
 /* Media query for phones with width <= 360px and height <= 800px */
 @media only screen and (max-width: 360px) and (max-height: 800px) {
