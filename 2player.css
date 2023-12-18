@@ -135,6 +135,13 @@ body {
   font-size: 24px;
   font-weight: 700;
 }
+.winning-cell-x {
+  background-color: #31C3BD; /* Green background for winning cells of X */
+}
+
+.winning-cell-o {
+  background-color: #F2B137; /* Yellow background for winning cells of O */
+}
 
   #player2Score{
   background:  #31C3BD;
@@ -152,7 +159,7 @@ body {
   #popupMessage,
   #tieMessage
   {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
