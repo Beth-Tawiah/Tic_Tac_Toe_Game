@@ -96,7 +96,7 @@ var tiesScore = 0;
 var scoresUpdated = false; 
 
 
-var myMove = playerChoice === "X"; // X always starts first
+var myMove  = "X"; 
 
 
 
