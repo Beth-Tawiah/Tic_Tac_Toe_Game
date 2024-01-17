@@ -52,6 +52,8 @@ body {
   align-items: center;
 }
 
+
+
 #Restart {
   display: flex;
   justify-content:center ;
@@ -106,7 +108,7 @@ body {
     
   }
   
-  .scoreboard div {
+  .scoreboard div:nth-child(n + 2) {
     width: 120px;
     height: 72px;
     padding: 10px;
@@ -122,16 +124,16 @@ body {
     letter-spacing: 1px;
   }
 
-#player2Score,
+#X,
 #tiesScore,
-#player1Score {
+#O {
   font-size: 14px;
   font-weight: 500;
 }
 
-#player2Score .score,
+#X .score,
 #tiesScore .score,
-#player1Score .score {
+#O .score {
   font-size: 24px;
   font-weight: 700;
 }
@@ -143,13 +145,13 @@ body {
   background-color: #F2B137; /* Yellow background for winning cells of O */
 }
 
-  #player2Score{
+  #X{
   background:  #31C3BD;
   }
   #tiesScore{
     background:  #A8BFC9;
   }
-  #player1Score{
+  #O{
     border-radius: 15px;
     background:  #F2B137;
   }

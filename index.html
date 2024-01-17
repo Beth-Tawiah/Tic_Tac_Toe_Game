@@ -7,45 +7,48 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="index.css">
   
-  <title>Frontend M3entor | Tic Tac Toe</title>
+  <title>Frontend Mentor | Tic Tac Toe</title>
 </head>
 <body>
 
   <!-- New game menu start -->
- 
-<div id="newGame" class="newGame>
-  <div id="logo">
-        <svg width="72" height="32" xmlns="http://www.w3.org/2000/svg">
+  <div id="newGame" class="newGame">
+    <div id="logo"></div>
+    <svg width="72" height="32" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fill-rule="evenodd">
-        <path d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31C3BD"/><path d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#F2B137" fill-rule="nonzero"/></g></svg>
-  </div>
-    <div class="allOne">
-      Pick player 1's mark
-    <div class="pickplayer">
-      <svg xmlns="http://www.w3.org/2000/svg" width="150" height="54" viewBox="0 0 198 54" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M114.557 16.2897L109.71 11.4431C109.12 10.8523 108.162 10.8523 107.571 11.4431L99 20.014L90.429 11.4431C89.8383 10.8523 88.8805 10.8523 88.2897 11.4431L83.4431 16.2897C82.8523 16.8805 82.8523 17.8383 83.4431 18.429L92.014 27L83.4431 35.571C82.8523 36.1617 82.8523 37.1195 83.4431 37.7103L88.2897 42.5569C88.8805 43.1477 89.8383 43.1477 90.429 42.5569L99 33.986L107.571 42.5569C108.162 43.1477 109.12 43.1477 109.71 42.5569L114.557 37.7103C115.148 37.1195 115.148 36.1617 114.557 35.571L105.986 27L114.557 18.429C115.148 17.8383 115.148 16.8805 114.557 16.2897Z" fill="#A8BFC9"/>
-      </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="140" height="54" viewBox="0 0 180 54" fill="none">
-      <rect width="160" height="54" rx="10" fill="#A8BFC9"/>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M114.741 26.8706C114.741 18.1055 107.636 11 98.8706 11C90.1055 11 83 18.1055 83 26.8706C83 35.6357 90.1055 42.7412 98.8706 42.7412C107.636 42.7412 114.741 35.6357 114.741 26.8706ZM92.4048 26.8706C92.4048 23.2996 95.2996 20.4048 98.8706 20.4048C102.442 20.4048 105.336 23.2996 105.336 26.8706C105.336 30.4416 102.442 33.3364 98.8706 33.3364C95.2996 33.3364 92.4048 30.4416 92.4048 26.8706Z" fill="#1A2A33"/>
+        <path d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z" fill="#31C3BD"/><path d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z" fill="#F2B137" fill-rule="nonzero"/>
     </svg>
   </div>
-  <div id="text2">Remember: X goes first</div>
+  <div class="allOne">
+    Pick player 1's mark
+    <div class="pickplayer">
+      <div id="notification"></div>
 
-    </div>
-    <button id="cpuGameBtn"onclick="navigateToCPUPage('computer.html')">Game (vs CPU)</button>
-
-    <button id="playerGameBtn" onclick="navigateToPlayerPage('2player.html')">New Game (vs player)</button>
+      <div class="mark-option" >
+        <button id="x"> <svg xmlns="http://www.w3.org/2000/svg" width="150" height="54" viewBox="0 0 198 54" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M114.557 16.2897L109.71 11.4431C109.12 10.8523 108.162 10.8523 107.571 11.4431L99 20.014L90.429 11.4431C89.8383 10.8523 88.8805 10.8523 88.2897 11.4431L83.4431 16.2897C82.8523 16.8805 82.8523 17.8383 83.4431 18.429L92.014 27L83.4431 35.571C82.8523 36.1617 82.8523 37.1195 83.4431 37.7103L88.2897 42.5569C88.8805 43.1477 89.8383 43.1477 90.429 42.5569L99 33.986L107.571 42.5569C108.162 43.1477 109.12 43.1477 109.71 42.5569L114.557 37.7103C115.148 37.1195 115.148 36.1617 114.557 35.571L105.986 27L114.557 18.429C115.148 17.8383 115.148 16.8805 114.557 16.2897Z" fill="#A8BFC9"/>
+        </svg></button>
+       <button id="o">
+        <svg xmlns="http://www.w3.org/2000/svg" width="140" height="54" viewBox="0 0 180 54" fill="none">
+          <rect width="160" height="54" rx="10" fill="#A8BFC9"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M114.741 26.8706C114.741 18.1055 107.636 11 98.8706 11C90.1055 11 83 18.1055 83 26.8706C83 35.6357 90.1055 42.7412 98.8706 42.7412C107.636 42.7412 114.741 35.6357 114.741 26.8706ZM92.4048 26.8706C92.4048 23.2996 95.2996 20.4048 98.8706 20.4048C102.442 20.4048 105.336 23.2996 105.336 26.8706C105.336 30.4416 102.442 33.3364 98.8706 33.3364C95.2996 33.3364 92.4048 30.4416 92.4048 26.8706Z" fill="#1A2A33"/>
+        </svg>
+      </button>
+      </div>
+      </div>
+    <div id="text2">Remember: X goes first</div>
   </div>
+  <button id="cpuGameBtn" onclick="navigateToCPUPage('computer.html')">Game (vs CPU)</button>
+  <button id="playerGameBtn" onclick="navigateToPlayerPage('2player.html')">New Game (vs player)</button>
 
- 
+
+
+
   <!-- New game menu end -->
-
-
   
-  <script src="2player.js"></script>
-  <script src="computer.js"></script
+  <script src="computer.js"></script>
+  <script src="index.js"></script>
 
-   
+
 </body>
 </html>

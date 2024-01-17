@@ -2,6 +2,30 @@ function navigateToCPUPage(url) {
   // Handle navigation to CPU page
   window.location.href = url;
 }
+document.addEventListener("DOMContentLoaded", function() {
+
+
+const playerChoice = localStorage.getItem("playerChoice");
+
+updateScoreboard(playerChoice);
+
+
+function updateScoreboard(playerChoice) {
+  const selectedMarkElement = document.getElementById("selectedMark");
+  const XScoreElement = document.getElementById("X");
+  const OScoreElement = document.getElementById("O");
+
+  selectedMarkElement.textContent = "";
+
+  if (playerChoice === "X") {
+      XScoreElement.innerHTML = `X (YOU) <br><span class="score">0</span>`;
+      OScoreElement.innerHTML = `O (CPU) <br><span class="score">0</span>`;
+  } else if (playerChoice === "O") {
+      XScoreElement.innerHTML = `X (CPU) <br><span class="score">0</span>`;
+      OScoreElement.innerHTML = `O (YOU) <br><span class="score">0</span>`;
+  } else {
+  }
+}
 $("#Restart").click(function () {
   $("#popupMessage").show(); // Show the "Restart Game?" message
 });
@@ -12,7 +36,7 @@ $("#cancel").click(function () {
 
 $("#confirmRestart").click(function () {
   $("#popupMessage").hide(); 
-  startGame();
+  window.location.href = 'index.html';
 });
 
 
@@ -28,7 +52,7 @@ $("#nextRoundComputer").click(function () {
   $(".winning-cell-x").removeClass("winning-cell-x");
   $(".winning-cell-o").removeClass("winning-cell-o");
 
-  startGame();
+  restartGame();
 });
 
   
@@ -42,7 +66,7 @@ $("#quitWin").click(function () {
 $("#nextRoundButton").click(function () {
   $("#winMessage").hide(); 
  
-  startGame();
+  restartGame();
   // Continue with the game  for the next round
 });
 
@@ -55,19 +79,24 @@ $("#quitTie").click(function () {
 $("#nextRoundTie").click(function () {
   $("#tieMessage").hide(); 
  
-  startGame();
+  restartGame();
   
 });
 
 //x and o icons 
-var player="X";
-var computer="0";
-var playerScore = 0;
-var cpuScore = 0;
+// var player="X";
+// var computer="0";
+// var xIcon = '<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/></svg>';
+// var oIcon = '<svg width="66" height="66" xmlns="http://www.w3.org/2000/svg"><path d="M33 1c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C15.327 65 1 50.673 1 33 1 15.327 15.327 1 33 1Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" stroke="#F2B137" stroke-width="2" fill="none"/></svg>';
+
+
+var XScore = 0;
+var OScore = 0;
 var tiesScore = 0;
 var scoresUpdated = false; 
 
 
+var myMove = playerChoice === "X"; // X always starts first
 
 
 
@@ -79,17 +108,19 @@ var board = [
 
 
 if (Math.random() < 0.9) {
-    var myMove = true;} else {
+  } 
+    else {
       var myMove = false;
     }
 
 
 var winner;
+
 if (myMove) {
   makeMove();
 }
 
-function startGame() {
+function restartGame() {
   board = [
     [null, null, null],
     [null, null, null],
@@ -98,10 +129,6 @@ function startGame() {
  
   scoresUpdated = false;
 
- if (Math.random() < 0.9) {
-    myMove = true;} else {
-      myMove = false;
-    }
  if (myMove) {
   makeMove();
 }
@@ -114,21 +141,22 @@ function setMsg(msg, turnText) {
   elem.innerHTML = ''; 
   
   // svg for the message
-  if (msg.includes("O TURN")) {
-    var computerIconSVG = document.createElement("div");
-    computerIconSVG.innerHTML = '<svg class="icon-svg computer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.7231 3.30608L16.6939 0.276913C16.3247 -0.0923043 15.7261 -0.0923043 15.3569 0.276913L10 5.63378L4.64314 0.276913C4.27392 -0.0923043 3.6753 -0.0923043 3.30608 0.276913L0.276913 3.30608C-0.0923043 3.6753 -0.0923043 4.27392 0.276913 4.64314L5.63378 10L0.276913 15.3569C-0.0923043 15.7261 -0.0923043 16.3247 0.276913 16.6939L3.30608 19.7231C3.6753 20.0923 4.27392 20.0923 4.64314 19.7231L10 14.3662L15.3569 19.7231C15.7261 20.0923 16.3247 20.0923 16.6939 19.7231L19.7231 16.6939C20.0923 16.3247 20.0923 15.7261 19.7231 15.3569L14.3662 10L19.7231 4.64314C20.0923 4.27392 20.0923 3.6753 19.7231 3.30608Z" fill="#A8BFC9"/></svg>';
-    elem.appendChild(computerIconSVG);
-
-} else if (msg.includes("X TURN")) {
+  if (msg.includes("X TURN")) {
     var userIconSVG = document.createElement("div");
     userIconSVG.innerHTML = '<svg class="icon-svg user-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20C15.5228 20 20 15.5228 20 10ZM5.92593 10C5.92593 7.74995 7.74995 5.92593 10 5.92593C12.25 5.92593 14.0741 7.74995 14.0741 10C14.0741 12.25 12.25 14.0741 10 14.0741C7.74995 14.0741 5.92593 12.25 5.92593 10Z" fill="#A8BFC9"/></svg>';
     elem.appendChild(userIconSVG);
+} else if (msg.includes("O TURN")) {
+  var computerIconSVG = document.createElement("div");
+  computerIconSVG.innerHTML = '<svg class="icon-svg computer-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.7231 3.30608L16.6939 0.276913C16.3247 -0.0923043 15.7261 -0.0923043 15.3569 0.276913L10 5.63378L4.64314 0.276913C4.27392 -0.0923043 3.6753 -0.0923043 3.30608 0.276913L0.276913 3.30608C-0.0923043 3.6753 -0.0923043 4.27392 0.276913 4.64314L5.63378 10L0.276913 15.3569C-0.0923043 15.7261 -0.0923043 16.3247 0.276913 16.6939L3.30608 19.7231C3.6753 20.0923 4.27392 20.0923 4.64314 19.7231L10 14.3662L15.3569 19.7231C15.7261 20.0923 16.3247 20.0923 16.6939 19.7231L19.7231 16.6939C20.0923 16.3247 20.0923 15.7261 19.7231 15.3569L14.3662 10L19.7231 4.64314C20.0923 4.27392 20.0923 3.6753 19.7231 3.30608Z" fill="#A8BFC9"/></svg>';
+  elem.appendChild(computerIconSVG);
 
 
+
+    
 }
 
   elem.innerHTML += turnText;
-  elem.innerHTML += msg.replace("O TURN", "").replace("X TURN", "");
+  elem.innerHTML += msg.replace("X TURN", "").replace("O TURN", "");
 }
 
   $(document).ready(function() {
@@ -191,19 +219,19 @@ function updateMove() {
     if (!scoresUpdated) {
     if (winner == 1) {
       // Computer wins
-      cpuScore ++;
+      OScore++;
     } else if (winner == 0) {
       // Player wins
-      playerScore ++;
+      XScore++;
     } else if (winner == -1) {
       // It's a draw
       tiesScore ++;
     }
 
     // Update the scoreboard
-    $("#playerScore .score").text(playerScore);
+    $("#X.score").text(XScore);
     $("#tiesScore .score").text(tiesScore);
-    $("#cpuScore .score").text(cpuScore);
+    $("#O .score").text(OScore);
 
     scoresUpdated = true;
   }
@@ -416,3 +444,4 @@ function recurseMinimax(board, player) {
 }
 
 updateMove();
+})

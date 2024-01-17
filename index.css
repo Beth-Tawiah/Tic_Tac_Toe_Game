@@ -39,11 +39,51 @@ body {
   border-radius: 10px;
   background: #1A2A33;
   margin-top: 15px; 
-  
+  width: 310px;
+  height: 59px;
 }
 
+
+#x, #o{
+  width: 140px;
+  height: 54px;
+  background-color: #10212A;
+}
+#x svg:hover,
+#o svg:hover {
+  background-color: #1A2A33;
+  border-radius: 15px;
+  width: 140px;
+  height: 54px;
+  transition: background-color 0.3s ease, border-radius 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+#notification {
+    display: none;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+}
+
+button  {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+
+
 #text2{
-  color: var(--Silver, #A8BFC9);
+  color: #A8BFC9;
   text-align: center;
   font-family: Outfit;
   font-size: 14px;
