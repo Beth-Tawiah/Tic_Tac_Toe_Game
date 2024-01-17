@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 const playerChoice = localStorage.getItem("playerChoice");
+var myMove = (playerChoice === "X");
 
 updateScoreboard(playerChoice);
 
@@ -96,7 +97,7 @@ var tiesScore = 0;
 var scoresUpdated = false; 
 
 
-var myMove  = "X"; 
+// var myMove = playerChoice === "X"; 
 
 
 
